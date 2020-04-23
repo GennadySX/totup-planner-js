@@ -57,7 +57,7 @@ export default class Scheduler extends Component {
                                     <span className="def ">Music BB</span>
                                     <span className="def">core strength</span>
                                 </td>
-                                <td className='lesson-block'>
+                                <td className='lesson-block '>
                                     <span className="orange">Music BB</span>
                                     <span className="blue">core strength</span>
                                 </td>
@@ -71,9 +71,7 @@ export default class Scheduler extends Component {
                                     <span className="def">Music BB</span>
                                     <span className="def">core strength</span>
                                 </td>
-
                                 <td className='lesson-block block-empty'>
-
                                 </td>
 
                             </tr>
@@ -91,7 +89,7 @@ export default class Scheduler extends Component {
                                     <span className="def">Music BB</span>
                                     <span className="def">core strength</span>
                                 </td>
-                                <td className='lesson-block'>
+                                <td className='lesson-block full purple'>
                                     <span className="def">Music BB</span>
                                     <span className="def">core strength</span>
                                 </td>
@@ -114,24 +112,23 @@ export default class Scheduler extends Component {
                                     <span className="def ">Yoga BB</span>
                                     <span className="def ">Bodysculpt</span>
                                 </td>
-                                <td className='lesson-block'>
-                                    <span className="def ">Music BB</span>
-                                    <span className="def">core strength</span>
+                                <td className='lesson-block '>
+                                    <span className="purple">Music BB</span>
+                                    <span className="purple">core strength</span>
                                 </td>
                                 <td className='lesson-block'>
                                     <span className="def">Music BB</span>
                                     <span className="def">core strength</span>
                                 </td>
                                 <td className='lesson-block'>
-                                    <span className="def">Music BB</span>
-                                    <span className="def">core strength</span>
+                                    <span className="blue">Music BB</span>
+                                    <span className="pink">core strength</span>
+                                </td>
+                                <td className='lesson-block full purple'>
+                                    <span className="">core strength</span>
                                 </td>
                                 <td className='lesson-block'>
-                                    <span className="def">Music BB</span>
-                                    <span className="def">core strength</span>
-                                </td>
-                                <td className='lesson-block'>
-                                    <span className="def">Music BB</span>
+                                    <span className="yellow">Music BB</span>
                                     <span className="def">core strength</span>
                                 </td>
 
@@ -151,7 +148,7 @@ export default class Scheduler extends Component {
                                 </td>
                                 <td className='lesson-block'>
                                     <span className="def">Music BB</span>
-                                    <span className="def">core strength</span>
+                                    <span className="green">core strength</span>
                                 </td>
                                 <td className='lesson-block'>
                                     <span className="def">Music BB</span>
