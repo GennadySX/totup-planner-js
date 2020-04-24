@@ -190,7 +190,7 @@ const data = [
         "id": 18,
         "title": "bikini body",
         "title_fr": "",
-        "type": "b",
+        "type": "e",
         "day": "mon",
         "date": "2020-04-21",
         "time": "10",

@@ -6,21 +6,22 @@ import {data} from '../fakeData/data'
 const Planner = (props) => {
     const {state, hour} = props
     const day = state.week
+    const colors = state.colors
     return (
         <>
             {state.index.map((e, eI) =>
                 (day[hour][eI + 1]) ?
                     (day[hour][eI + 1].length <= 1) ?
                         (
-                            <td className={(state.active === 'all' || state.active === state.colors[day[hour][eI + 1][0].type].name) ?
-                                `lesson-block full ${state.colors[day[hour][eI + 1][0].type].color}` :
-                                `lesson-block full ${state.active}`} datatype={state.colors[day[hour][eI + 1][0].type]}>
+                            <td key={eI} className={(state.active === 'all' || state.active === colors[day[hour][eI + 1][0].type].name) ?
+                                `lesson-block full ${colors[day[hour][eI + 1][0].type].color}` :
+                                `lesson-block full ${state.active}`} datatype={colors[day[hour][eI + 1][0].type]}>
                                 <span>{day[hour][eI + 1][0].title}</span></td>)
-                        : (<td className={'lesson-block'}>{
+                        : (<td key={eI} className={'lesson-block'}>{
                             Array.from(day[hour][eI + 1]).map((item, index) =>
-                                (<span
-                                    className={(state.active === 'all' || state.active === state.colors[item.type].name) ? state.colors[item.type].color : 'def'}>{item.title}</span>))}</td>)
-                    : <td className='lesson-block'><span className={'is'}></span></td>
+                                (<span key={index}
+                                    className={(state.active === 'all' || state.active === colors[item.type].name) ? colors[item.type].color : 'def'}>{item.title}</span>))}</td>)
+                    : <td key={eI} className='lesson-block'><span className={'is'}></span></td>
             )}
         </>
     )
@@ -47,6 +48,8 @@ export default class Scheduler extends Component {
 
     componentDidMount() {
         this.activeIt()
+
+
         this.setState({week: this.realizeIt()}, () => console.log('state ', this.state))
     }
 
@@ -62,13 +65,11 @@ export default class Scheduler extends Component {
     }
 
     activeIt() {
-        const _ = this
-        /*        $('.control-btn').not('.active').hover(function () {
-                    $(this).css('background', $(this).css('border-color'))
-                }, function () {
-                    $(this).css('background', '#fff')
-                })*/
+        // $('.control-btn').not('.active').hover(function () {$(this).css('background', $(this).css('border-color'))},  function(e) {
+        //     if ($(this).hasClass('active') === false) $(this).css('background', '#fff')
+        // })
 
+        const _ = this
         $('.control-btn').click((e) => {
             $('.control-btn.active').removeClass('active')
             $(e.target).addClass('active')
@@ -137,14 +138,12 @@ export default class Scheduler extends Component {
                                 <tr>
                                     <td className="bg-muted ">13:30-14:30</td>
                                     <Planner state={this.state} hour={13}/>
-                                    <td className='lesson-block block-empty'></td>
+                                    <td className='lesson-block block-empty'>merci de suivre le programme sur notre site</td>
                                 </tr>
                                 <tr>
                                     <td className="bg-muted ">14:30-15:30</td>
                                     <Planner state={this.state} hour={14}/>
-                                    <td className='lesson-block block-empty'>
-                                        merci de suivre le programme sur notre site
-                                    </td>
+                                    <td className='lesson-block block-empty'></td>
                                 </tr>
                                 <tr>
                                     <td className="bg-muted ">15:30-16:30</td>
