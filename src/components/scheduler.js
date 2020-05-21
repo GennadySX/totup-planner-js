@@ -15,12 +15,12 @@ const Planner = (props) => {
                         (
                             <td key={eI} className={(state.active === 'all' || state.active === colors[day[hour][eI + 1][0].type].name) ?
                                 `lesson-block full ${colors[day[hour][eI + 1][0].type].color}` :
-                                `lesson-block full ${state.active}`} datatype={colors[day[hour][eI + 1][0].type]}>
+                                `lesson-block full gray`} datatype={colors[day[hour][eI + 1][0].type]}>
                                 <span>{day[hour][eI + 1][0].title}</span></td>)
                         : (<td key={eI} className={'lesson-block'}>{
                             Array.from(day[hour][eI + 1]).map((item, index) =>
                                 (<span key={index}
-                                    className={(state.active === 'all' || state.active === colors[item.type].name) ? colors[item.type].color : 'def'}>{item.title}</span>))}</td>)
+                                    className={(state.active === 'all' || state.active === colors[item.type].name) ? colors[item.type].color : 'def gray'}>{item.title}</span>))}</td>)
                     : <td key={eI} className='lesson-block'><span className={'is'}></span></td>
             )}
         </>
